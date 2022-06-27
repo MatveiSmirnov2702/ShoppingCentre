@@ -1,0 +1,55 @@
+﻿<Window x:Class="ShoppingCentre.EditAddUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoppingCentre"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="EditAddUsers" Height="470" Width="820">
+    <Grid Background="LightGoldenrodYellow">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="287"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="50"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="44.5"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="41"></RowDefinition>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto" MinHeight="44.5"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="35"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="161.5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Text=" Имя" FontSize="28" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,1,-72,1"/>
+        <TextBlock Text=" Отчество" FontSize="28" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,2,-72,2.5"></TextBlock>
+        <TextBlock Text=" Логин" FontSize="28" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,44,0,4.5" Grid.RowSpan="4"></TextBlock>
+        <TextBlock Text=" Пароль" FontSize="28" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,1.5,0,2.5"></TextBlock>
+        <TextBlock Text=" Пол" FontSize="28" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,1.5,0,0.5"></TextBlock>
+        <TextBlock Text=" Роль" FontSize="28" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,1.5"></TextBlock>
+        <TextBlock Text=" Номер телефона" FontSize="28" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,2.5"></TextBlock>
+        <TextBlock Text=" Фото" FontSize="28" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,2.5"></TextBlock>
+
+        <TextBox Text="{Binding name}" Grid.Column="1" Margin="10.5,9,-260,2.5" Grid.Row="0" />
+        <TextBox Text="{Binding fathername}" Grid.Column="1" Margin="10.5,9.5,-260,4.5" Grid.Row="1" />
+        <TextBox Text="{Binding Login_Employee}" Grid.Column="1" Grid.Row="2" Height="26" FontSize="14" FontFamily="Arial" Margin="10,9.8,-259.8,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Password_Employee}" Grid.Column="1" Margin="10.5,7.5,-260,4.5" Grid.Row="3" />
+        <TextBox Text="{Binding Gender}" Grid.Column="1" Margin="10.5,9.5,-260,10.5" Grid.Row="4" />
+        <ComboBox SelectedItem="{Binding Role}" Name="ComboRoleEdit" Grid.Column="1" Margin="10,12.8,10.2,13.4" Grid.Row="5" />
+        <TextBox Text="{Binding Telephone_Number}" Grid.Column="1" Margin="10.5,9.5,-260,10.5" Grid.Row="6" />
+
+        <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Grid.ColumnSpan="2" Margin="260,0,-259.4,1.6" Grid.Row="8" Grid.RowSpan="1" VerticalAlignment="Bottom"></Button>
+        <Button Grid.Column="1" Grid.Row="7"  VerticalAlignment="Center" Click="DownLoad_Click" Margin="166,4,-56.8,9.8" Height="31">
+            <materialDesign:PackIcon Grid.Column="1" Kind="arrowcollapsedown" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="44" Grid.Row="7"/>
+        </Button>
+        <Button Content="Назад" Name="BtnPrev" Click="BtnBack_Click" HorizontalAlignment="Left" Margin="433,0,-305.6,8.4" Grid.Column="1" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

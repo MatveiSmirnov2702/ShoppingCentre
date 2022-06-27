@@ -1,0 +1,15 @@
+﻿<Window x:Class="ShoppingCentre.Main_MenuAdm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoppingCentre"
+        mc:Ignorable="d"
+        Title="Main_MenuAdm" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Height="62" VerticalAlignment="Center" Width="324" Margin="244,153,225.6,205">
+            <Button Content="Торговые центры" d:LayoutOverrides="Height" Click="ShoppingC_Click"/>
+            <Button Content="Пользователи" Click="Users_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
