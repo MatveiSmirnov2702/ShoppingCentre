@@ -40,6 +40,11 @@ namespace ShoppingCentre
         public virtual DbSet<Sotrudniki> Sotrudniki { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
+        public virtual ObjectResult<PerOc_Result> PerOc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PerOc_Result>("PerOc");
+        }
+    
         public virtual int RentPr(Nullable<int> tent_ID, Nullable<int> empl_ID, Nullable<int> sC_ID, string pV_ID, Nullable<System.DateTime> rental_Start, Nullable<System.DateTime> rental_End)
         {
             var tent_IDParameter = tent_ID.HasValue ?

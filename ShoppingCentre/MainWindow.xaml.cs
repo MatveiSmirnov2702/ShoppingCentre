@@ -20,7 +20,7 @@ namespace ShoppingCentre
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static int index = 0;
+        public static int index = 1;
         public static string Surname, ClientName, Patronymic;
         string _login, _password;
         public MainWindow()

@@ -37,5 +37,12 @@ namespace ShoppingCentre
             win1.Show();
             this.Close();
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow win1 = new MainWindow();
+            win1.Show();
+            this.Close();
+        }
     }
 }

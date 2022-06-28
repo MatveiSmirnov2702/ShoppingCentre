@@ -11,5 +11,6 @@
             <Button Content="Торговые центры" d:LayoutOverrides="Height" Click="ShoppingC_Click"/>
         </StackPanel>
         <Button Content="Окупаемость ТЦ" Click="Payback_Click" Height="Auto" Margin="244,182,225.6,206"/>
+        <Button Content="Назад" x:Name="BtnBack" Click="BtnBack_Click" Margin="694.382,10,0,0" FontSize="14" Height="46" VerticalAlignment="Top" HorizontalAlignment="Left" Width="91"/>
     </Grid>
 </Window>

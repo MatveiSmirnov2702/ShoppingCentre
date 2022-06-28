@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="Payback" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="621*"/>
+            <ColumnDefinition Width="134*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="166*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="38*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DGridSotr" BorderThickness="0" FontWeight="DemiBold" Background="GhostWhite" RowBackground="Bisque" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,61,9.6,0.4" Grid.RowSpan="5" Grid.ColumnSpan="4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Название ТЦ" Binding="{Binding Name_Shop}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Город" Binding="{Binding City}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Процентная окупаемость" Binding="{Binding procent, StringFormat={}{0:N2} %}" ></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" Margin="11.182,10,0,0" FontSize="14" Grid.Column="3" Height="46" VerticalAlignment="Top" HorizontalAlignment="Left" Width="91"/>
+
     </Grid>
 </Window>

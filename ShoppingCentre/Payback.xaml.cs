@@ -22,6 +22,14 @@ namespace ShoppingCentre
         public Payback()
         {
             InitializeComponent();
+            DGridSotr.ItemsSource = pavilionsEntities.GetContext().PerOc().ToList();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Main_MenuManA win1 = new Main_MenuManA();
+            win1.Show();
+            this.Close();
         }
     }
 }

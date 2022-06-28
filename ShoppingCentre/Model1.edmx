@@ -132,6 +132,7 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="PerOc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="RentPr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Tent_ID" Type="int" Mode="In" />
           <Parameter Name="Empl_ID" Type="int" Mode="In" />
@@ -357,6 +358,7 @@
             <End Role="Shop" EntitySet="Shop" />
             <End Role="Pavilions" EntitySet="Pavilions" />
           </AssociationSet>
+          <FunctionImport Name="PerOc" ReturnType="Collection(pavilionsModel.PerOc_Result)" />
           <FunctionImport Name="RentPr">
             <Parameter Name="Tent_ID" Mode="In" Type="Int32" />
             <Parameter Name="Empl_ID" Mode="In" Type="Int32" />
@@ -397,6 +399,11 @@
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="threeYear" />
         </EntityContainer>
+        <ComplexType Name="PerOc_Result">
+          <Property Type="String" Name="Name_Shop" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="procent" Nullable="true" />
+        </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -493,6 +500,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PerOc" FunctionName="Хранилище pavilionsModel.PerOc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="pavilionsModel.PerOc_Result">
+                <ScalarProperty Name="Name_Shop" ColumnName="Name_Shop" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="procent" ColumnName="procent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="RentPr" FunctionName="Хранилище pavilionsModel.RentPr" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище pavilionsModel.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище pavilionsModel.sp_creatediagram" />
